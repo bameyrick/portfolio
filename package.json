@@ -4,6 +4,7 @@
   "license": "MIT",
   "scripts": {
     "start": "npm run pre-build && concurrently-await -n icons,app \"npm run icons:watch\" \"nx serve portfolio\"",
+    "build": "npm run pre-build && nx build portfolio",
     "pre-build": "npm run icons",
     "icons": "ts-node scripts/icons.ts",
     "icons:watch": "chokidar apps/portfolio/svg/*.svg -t 500 -c \"npm run icons\"",
