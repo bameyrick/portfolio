@@ -53,7 +53,12 @@ const StyledHeader = styled.header`
     width: 1em;
     line-height: 1;
 
+    :after {
+      display: none;
+    }
+
     :hover:after {
+      display: block;
       transform: translateY(0.2em);
     }
   }

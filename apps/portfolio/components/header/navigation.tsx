@@ -1,5 +1,6 @@
 import { AppPath } from '@/constants/app-path.enum';
 import { mediaQuery } from '@/styles/helpers/breakpoint';
+import { staticPalette } from '@/styles/settings/colors';
 import { breakpoint, padding } from '@/styles/settings/layout';
 import { fontSize } from '@/styles/typography/font-size';
 import Link from 'next/link';
@@ -35,6 +36,22 @@ const StyledNavigation = styled.ul`
     `,
     { breakpoint: breakpoint.sm }
   )}
+
+  .link {
+    color: inherit;
+
+    :after {
+      display: none;
+      border-color: ${staticPalette.primary};
+      transform: translateY(0.5em);
+    }
+
+    :hover {
+      :after {
+        display: block;
+      }
+    }
+  }
 `;
 
 export default function Navigation({ setOpen }: { setOpen: (open: boolean) => void }) {
@@ -42,7 +59,7 @@ export default function Navigation({ setOpen }: { setOpen: (open: boolean) => vo
     <StyledNavigation>
       {headerLinks.map(({ href, label }) => (
         <li key={href}>
-          <Link href={href} onClick={() => setOpen(false)}>
+          <Link className="link" href={href} onClick={() => setOpen(false)}>
             {label}
           </Link>
         </li>

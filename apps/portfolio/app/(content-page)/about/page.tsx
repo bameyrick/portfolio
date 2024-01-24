@@ -10,7 +10,7 @@ import styled, { css } from 'styled-components';
 
 import { AppPath } from '@/constants/app-path.enum';
 import { ReactComponent as ArrowRight } from '@/public/svg/arrow-right.svg';
-import { grey, staticPalette } from '@/styles/settings/colors';
+import { grey } from '@/styles/settings/colors';
 import Link from 'next/link';
 
 const StyledAbout = styled.div`
@@ -73,12 +73,24 @@ const StyledAbout = styled.div`
   }
 
   .work-link {
+    margin-top: ${padding.xl};
+    font-size: ${fontSize.xl};
+
+    :after {
+      display: none;
+    }
+
+    :hover {
+      :after {
+        display: block;
+      }
+    }
+  }
+
+  .work-link-inner {
     display: inline-flex;
     gap: ${padding.xs};
-    margin-top: ${padding.xl};
     align-items: center;
-    font-size: ${fontSize.xl};
-    color: ${staticPalette.primary};
   }
 
   .arrow {
@@ -148,15 +160,11 @@ export default function About() {
                 <ListItem>Working within agile environments</ListItem>
                 <ListItem>
                   Prototyping or using kits such as{' '}
-                  <Link className="inline" href="https://prototype-kit.service.gov.uk/docs/" target="_blank">
+                  <Link href="https://prototype-kit.service.gov.uk/docs/" target="_blank">
                     GOV.UK
                   </Link>{' '}
                   or{' '}
-                  <Link
-                    className="inline"
-                    href="https://service-manual.ons.gov.uk/design-system/guidance/ons-prototype-kit"
-                    target="_blank"
-                  >
+                  <Link href="https://service-manual.ons.gov.uk/design-system/guidance/ons-prototype-kit" target="_blank">
                     ONS
                   </Link>
                 </ListItem>
@@ -165,8 +173,8 @@ export default function About() {
                 <ListItem>Automating testing and code quality control systems</ListItem>
               </ul>
 
-              <Link href={AppPath.Work}>
-                <span className="work-link">
+              <Link href={AppPath.Work} className="work-link">
+                <span className="work-link-inner">
                   Explore my work in more detail <ArrowRight className="arrow" />
                 </span>
               </Link>

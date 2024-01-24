@@ -10,7 +10,7 @@ import { ReactComponent as LinkedIn } from '@/public/svg/linkedin.svg';
 import { ReactComponent as NPM } from '@/public/svg/npm.svg';
 
 import { mediaQuery } from '@/styles/helpers/breakpoint';
-import { palette } from '@/styles/settings/colors';
+import { palette, staticPalette } from '@/styles/settings/colors';
 import { fontSize } from '@/styles/typography/font-size';
 
 const StyledFooter = styled.footer`
@@ -46,6 +46,21 @@ const StyledFooter = styled.footer`
     list-style: none;
   }
 
+  .link {
+    color: inherit;
+
+    :after {
+      display: none;
+      color: ${staticPalette.primary};
+    }
+
+    :hover {
+      :after {
+        display: block;
+      }
+    }
+  }
+
   .icon {
     width: 1em;
     height: 1em;
@@ -63,19 +78,19 @@ export default function Footer() {
           <nav>
             <ul className="links">
               <li>
-                <Link href="https://linkedin.com/in/bameyrick" title="LinkedIn" target="_blank">
+                <Link className="link" href="https://linkedin.com/in/bameyrick" title="LinkedIn" target="_blank">
                   <LinkedIn className="icon" />
                 </Link>
               </li>
 
               <li>
-                <Link href="https://github.com/bameyrick" title="GitHub" target="_blank">
+                <Link className="link" href="https://github.com/bameyrick" title="GitHub" target="_blank">
                   <GitHub className="icon" />
                 </Link>
               </li>
 
               <li>
-                <Link href="https://www.npmjs.com/~bameyrick" title="NPM" target="_blank">
+                <Link className="link" href="https://www.npmjs.com/~bameyrick" title="NPM" target="_blank">
                   <NPM className="icon" />
                 </Link>
               </li>

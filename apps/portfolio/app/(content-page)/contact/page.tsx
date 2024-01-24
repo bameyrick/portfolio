@@ -5,11 +5,9 @@ import FormField from '@/components/form/field';
 import WidthConstraint from '@/components/width-constraint';
 import { ValidationRule } from '@/models/validation-rule';
 import { mediaQuery } from '@/styles/helpers/breakpoint';
-import { staticPalette } from '@/styles/settings/colors';
 import { breakpoint, padding } from '@/styles/settings/layout';
 import { fontSize } from '@/styles/typography/font-size';
 import { isEmpty, isNullOrUndefined } from '@qntm-code/utils';
-import Color from 'color';
 import Link from 'next/link';
 import { useState } from 'react';
 import { Helmet } from 'react-helmet';
@@ -17,18 +15,6 @@ import styled, { css } from 'styled-components';
 
 const StyledContact = styled.div`
   font-size: ${fontSize.xl};
-
-  .link {
-    text-decoration: underline;
-    color: ${staticPalette.primary};
-
-    :hover {
-      color: ${Color(staticPalette.primary).darken(0.2).toString()};
-      :after {
-        display: none;
-      }
-    }
-  }
 
   .form {
     margin-top: ${padding.xl};
@@ -148,7 +134,7 @@ export default function Contact() {
 
           <p>
             Additionally, you can connect with me via{' '}
-            <Link className="link" href="https://linkedin.com/in/bameyrick" target="_blank">
+            <Link href="https://linkedin.com/in/bameyrick" target="_blank">
               LinkedIn
             </Link>
             .

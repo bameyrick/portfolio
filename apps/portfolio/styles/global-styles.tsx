@@ -75,7 +75,7 @@ const Styles = createGlobalStyle<{ theme: ColorTheme }>`
   a {
     position: relative;
     display: inline-block;
-    color: inherit;
+    color: ${staticPalette.primary};
     text-decoration: none;
 
     :after {
@@ -83,15 +83,14 @@ const Styles = createGlobalStyle<{ theme: ColorTheme }>`
       display: block;
       position: absolute;
       width: 100%;
+      transform: translateY(0.05em);
+      border-bottom: 2px solid currentColor;
     }
 
     :hover {
-      color: ${staticPalette.primary};
+      color: ${Color(staticPalette.primary).darken(0.2).toString()};
 
-      :after {
-        transform: translateY(0.5em);
-        border-bottom: 2px solid ${staticPalette.primary};
-      }
+
     }
 
     :focus,
@@ -102,20 +101,6 @@ const Styles = createGlobalStyle<{ theme: ColorTheme }>`
     :focus-visible {
       color: #222;
       font-weight: bold;
-    }
-
-    &.inline {
-      color: ${staticPalette.primary};
-      border-bottom: 2px solid ${staticPalette.primary};
-
-      &:hover {
-        color: ${Color(staticPalette.primary).darken(0.2).toString()};
-
-        :after {
-          transform: none;
-          border-color: currentColor;
-        }
-      }
     }
   }
 
@@ -161,6 +146,10 @@ const Styles = createGlobalStyle<{ theme: ColorTheme }>`
   textarea {
     min-height: 7em;
     resize: vertical;
+  }
+
+  figure {
+    margin: 0;
   }
 `;
 

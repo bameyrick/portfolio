@@ -1,31 +1,57 @@
 'use client';
 
 import { mediaQuery } from '@/styles/helpers/breakpoint';
-import { breakpoint, maxWidth, padding } from '@/styles/settings/layout';
+import { breakpoint, maxWidth as defaultMaxWidth, padding } from '@/styles/settings/layout';
+import { isNullOrUndefined } from '@qntm-code/utils';
 import styled, { css } from 'styled-components';
 
+interface StyledWidthConstraintProps {
+  maxWidth: string;
+  padded: boolean;
+  justify: 'center' | 'flex-start' | 'flex-end';
+}
+
 const StyledWidthConstraint = styled.div`
-  display: flex;
-  justify-content: center;
-  width: 100%;
+  ${({ maxWidth, padded, justify }: StyledWidthConstraintProps) =>
+    css`
+      display: flex;
+      justify-content: ${justify};
+      width: 100%;
 
-  .width-constraint-inner {
-    max-width: ${maxWidth};
-    width: 100%;
-    padding: 0 ${padding.md};
+      .width-constraint-inner {
+        width: 100%;
 
-    ${mediaQuery(
-      css`
-        padding: 0 ${padding.xl4};
-      `,
-      { breakpoint: breakpoint.md }
-    )}
-  }
+        max-width: ${maxWidth};
+        padding: 0 ${padded ? padding.md : 0};
+
+        ${mediaQuery(
+          css`
+            padding: 0 ${padded ? padding.xl4 : 0};
+          `,
+          { breakpoint: breakpoint.md }
+        )}
+      }
+    `}
 `;
 
-export default function WidthConstraint({ children }: { children: React.ReactNode }) {
+export default function WidthConstraint({
+  children,
+  maxWidth,
+  padded,
+  justify,
+}: {
+  children: React.ReactNode;
+} & Partial<StyledWidthConstraintProps>) {
+  if (isNullOrUndefined(padded)) {
+    padded = true;
+  }
+
+  if (isNullOrUndefined(justify)) {
+    justify = 'center';
+  }
+
   return (
-    <StyledWidthConstraint>
+    <StyledWidthConstraint maxWidth={maxWidth || defaultMaxWidth} padded={padded} justify={justify}>
       <div className="width-constraint-inner">{children}</div>
     </StyledWidthConstraint>
   );

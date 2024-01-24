@@ -25,6 +25,7 @@ export const typography = css`
 
   * {
     line-height: 1.75;
+    letter-spacing: 0.04em;
   }
 
   ${Object.entries(fontSize)

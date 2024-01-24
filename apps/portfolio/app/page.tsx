@@ -89,12 +89,15 @@ const StyledHome = styled.div`
   .see-examples {
     font-size: ${fontSize.xl};
     margin: ${padding.xl2} 0 0;
+    color: ${white};
+
+    :after {
+      display: none;
+    }
 
     :hover {
-      color: ${white};
-
       :after {
-        border-color: ${white};
+        display: block;
       }
     }
 
