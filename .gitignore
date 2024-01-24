@@ -4,6 +4,7 @@
 dist
 tmp
 /out-tsc
+apps/portfolio/public/svg
 
 # dependencies
 node_modules
