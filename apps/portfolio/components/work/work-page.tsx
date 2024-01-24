@@ -62,7 +62,8 @@ const StyledWork = styled.div`
     }
   }
 
-  .image {
+  img,
+  video {
     width: 100%;
   }
 

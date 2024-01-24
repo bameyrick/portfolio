@@ -26,7 +26,7 @@ export const WORK_ITEMS: Record<string, WorkItem> = {
   [BRIDLEWAYS_URL]: {
     title: BRIDLEWAYS_TITLE,
     description: 'A website to help people find bridleways in the UK.',
-    image: '/images/bridleway-finder.webp',
+    image: '/images/bridleways/bridleway-map.webp',
   },
   [TRAFFIC_MANAGEMENT_URL]: {
     title: TRAFFIC_MANAGEMENT_TITLE,

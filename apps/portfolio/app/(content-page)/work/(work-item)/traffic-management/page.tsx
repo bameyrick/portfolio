@@ -7,7 +7,12 @@ export const TRAFFIC_MANAGEMENT_URL = 'traffic-management';
 
 export default function TrafficManagement() {
   return (
-    <WorkPage title={TRAFFIC_MANAGEMENT_TITLE} skills={[]} previous={BRIDLEWAYS_URL} next={MARINE_TRACKING_URL}>
+    <WorkPage
+      title={TRAFFIC_MANAGEMENT_TITLE}
+      skills={['Angular', 'RxJS', 'AG Grid', 'nx', 'monorepos', 'Jest', 'Agile']}
+      previous={BRIDLEWAYS_URL}
+      next={MARINE_TRACKING_URL}
+    >
       yes
     </WorkPage>
   );

@@ -13,12 +13,24 @@ export default function DigitalCensus() {
     <WorkPage
       title={DIGITAL_CENSUS_TITLE}
       client="Office for National Statistics"
-      skills={['HTML', 'CSS', 'JavaScript/Typescript', 'Nunjucks', 'Unit Testing', 'Node JS', 'Circle CI', 'Docker', 'Git']}
+      skills={[
+        'HTML',
+        'CSS',
+        'JavaScript/Typescript',
+        'Nunjucks',
+        'Unit Testing',
+        'Node JS',
+        'Circle CI',
+        'Docker',
+        'Git',
+        'Kanban',
+        'Agile',
+      ]}
       next={ONS_DESIGN_SYSTEM_URL}
       previous={MARINE_TRACKING_URL}
     >
       <figure>
-        <img className="image" src="/images/census/census-overview.webp" />
+        <img src="/images/census/census-overview.webp" />
         <figcaption>
           Starting the census and collecting household data, including establishing household{' '}
           <Link href="https://service-manual.ons.gov.uk/design-system/patterns/relationships" target="_blank">
@@ -76,7 +88,7 @@ export default function DigitalCensus() {
       </WidthConstraint>
 
       <figure>
-        <img className="image" src="/images/census/census-mobile.webp" />
+        <img src="/images/census/census-mobile.webp" />
         <figcaption>The survey was optimised to be completed on mobile</figcaption>
       </figure>
 

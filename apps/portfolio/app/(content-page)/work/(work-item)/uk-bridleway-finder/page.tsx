@@ -1,3 +1,4 @@
+import { Video } from '@/components/video';
 import WidthConstraint from '@/components/width-constraint';
 import WorkPage, { WORK_PAGE_TEXT_MAX_WIDTH } from '@/components/work/work-page';
 import { AppPath } from '@/constants/app-path.enum';
@@ -31,6 +32,11 @@ export default function UKBridlewayFinder() {
       ]}
       next={TRAFFIC_MANAGEMENT_URL}
     >
+      <figure>
+        <img src="/images/bridleways/bridleway-map.webp" />
+        <figcaption>A searchable map with layer toggles for each type of PRoW</figcaption>
+      </figure>
+
       <WidthConstraint padded={false} maxWidth={WORK_PAGE_TEXT_MAX_WIDTH} justify="flex-start">
         <h2>Overview</h2>
 
@@ -39,7 +45,7 @@ export default function UKBridlewayFinder() {
           suitable routes for hacking out. I took it upon myself to build a website that combined public right of way data from local
           authorities with open data from OpenStreetMap to create a{' '}
           <Link href="https://bridleways.uk" target="_blank">
-            map of bridleways
+            searchable map of bridleways
           </Link>{' '}
           and other routes suitable for horse riding.
         </p>
@@ -83,13 +89,25 @@ export default function UKBridlewayFinder() {
           to ensure it completed within a sensible time. Utilising techniques such as splitting the UK into a geospatial matrix, and
           utilising parallel processing, I was able to optimise the run time from multiple days to just a few hours.
         </p>
+      </WidthConstraint>
 
+      <figure>
+        <Video src="/images/bridleways/related-ways.mp4" />
+
+        <figcaption>Users can see related ways and view comments from other riders</figcaption>
+      </figure>
+
+      <WidthConstraint padded={false} maxWidth={WORK_PAGE_TEXT_MAX_WIDTH} justify="flex-start">
         <h2>Building the map</h2>
-
         <p>
           The user facing side of the project was arguably the easiest part to build. The UI is built using Angular, RxJS, and ngrx/store,
           and mapping provided by MapLibre GL (an open source fork of Mapbox GL). The backend is built using NestJS, nodemailer,
           Postgres/PostGIS, and nginx. Deployments are made easy by containerising the application using Docker.
+        </p>
+
+        <p>
+          The website features the ability to toggle map layers by PRoW type, find related ways that continue from the one you are currently
+          viewing, and user comments so riders can communicate the suitability or issues they may have encountered riding on that way.
         </p>
 
         <h2>User management</h2>
