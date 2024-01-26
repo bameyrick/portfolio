@@ -1,7 +1,5 @@
 import WorkPage from '@/components/work/work-page';
-
-export const RAC_TITLE = 'E‑commerce platform';
-export const RAC_URL = 'rac';
+import { RAC_TITLE, RAC_URL } from '../../constants';
 
 export default function RAC() {
   return (

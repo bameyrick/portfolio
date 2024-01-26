@@ -1,8 +1,6 @@
 import WidthConstraint from '@/components/width-constraint';
 import WorkPage, { WORK_PAGE_TEXT_MAX_WIDTH } from '@/components/work/work-page';
-
-export const ONS_DESIGN_SYSTEM_TITLE = 'An accessible design system';
-export const ONS_DESIGN_SYSTEM_URL = 'ons-design-system';
+import { ONS_DESIGN_SYSTEM_TITLE, ONS_DESIGN_SYSTEM_URL } from '../../constants';
 
 export default function ONSDesignSystem() {
   return (

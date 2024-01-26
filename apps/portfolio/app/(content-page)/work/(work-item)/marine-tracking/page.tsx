@@ -1,8 +1,6 @@
 import WidthConstraint from '@/components/width-constraint';
 import WorkPage, { WORK_PAGE_TEXT_MAX_WIDTH } from '@/components/work/work-page';
-
-export const MARINE_TRACKING_TITLE = 'Marine tracking';
-export const MARINE_TRACKING_URL = 'marine-tracking';
+import { MARINE_TRACKING_TITLE, MARINE_TRACKING_URL } from '../../constants';
 
 export default function MarineTracking() {
   return (

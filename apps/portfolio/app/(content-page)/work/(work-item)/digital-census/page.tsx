@@ -1,9 +1,7 @@
 import WidthConstraint from '@/components/width-constraint';
 import WorkPage, { WORK_PAGE_TEXT_MAX_WIDTH } from '@/components/work/work-page';
 import Link from 'next/link';
-
-export const DIGITAL_CENSUS_TITLE = 'A digital‑first census';
-export const DIGITAL_CENSUS_URL = 'digital-census';
+import { DIGITAL_CENSUS_TITLE, DIGITAL_CENSUS_URL } from '../../constants';
 
 export default function DigitalCensus() {
   return (

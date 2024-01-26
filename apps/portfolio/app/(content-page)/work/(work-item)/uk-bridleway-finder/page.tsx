@@ -3,9 +3,7 @@ import WidthConstraint from '@/components/width-constraint';
 import WorkPage, { WORK_PAGE_TEXT_MAX_WIDTH } from '@/components/work/work-page';
 import { AppPath } from '@/constants/app-path.enum';
 import Link from 'next/link';
-
-export const BRIDLEWAYS_TITLE = 'Bridleway finder';
-export const BRIDLEWAYS_URL = 'uk-bridleway-finder';
+import { BRIDLEWAYS_TITLE, BRIDLEWAYS_URL } from '../../constants';
 
 export default function UKBridlewayFinder() {
   return (

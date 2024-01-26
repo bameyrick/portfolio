@@ -1,9 +1,7 @@
 import WidthConstraint from '@/components/width-constraint';
 import WorkPage, { WORK_PAGE_TEXT_MAX_WIDTH } from '@/components/work/work-page';
 import Link from 'next/link';
-
-export const TRAFFIC_MANAGEMENT_TITLE = 'Traffic management';
-export const TRAFFIC_MANAGEMENT_URL = 'traffic-management';
+import { TRAFFIC_MANAGEMENT_TITLE, TRAFFIC_MANAGEMENT_URL } from '../../constants';
 
 export default function TrafficManagement() {
   return (

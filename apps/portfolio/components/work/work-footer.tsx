@@ -5,7 +5,7 @@ import { palette, staticPalette } from '@/styles/settings/colors';
 import { padding } from '@/styles/settings/layout';
 import { fontSize } from '@/styles/typography/font-size';
 import { isNullOrUndefined } from '@qntm-code/utils';
-import { WORK_ITEMS } from 'app/(content-page)/work/page';
+import { WORK_ITEMS } from 'app/(content-page)/work/constants';
 import Link from 'next/link';
 import styled from 'styled-components';
 
