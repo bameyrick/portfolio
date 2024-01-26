@@ -152,7 +152,7 @@ export default function About() {
               <h2 className="subtitle">Stuff I enjoy doing:</h2>
 
               <ul className="list">
-                <ListItem>Developing performant applications with Angular or React/NextJS</ListItem>
+                <ListItem>Developing performant applications with Angular or React/Next.js</ListItem>
                 <ListItem>Building design systems to streamline development</ListItem>
                 <ListItem>Testing UI with real users</ListItem>
                 <ListItem>Improving accessibility and usability of products</ListItem>

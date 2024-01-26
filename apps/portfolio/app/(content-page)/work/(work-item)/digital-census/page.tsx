@@ -1,9 +1,6 @@
 import WidthConstraint from '@/components/width-constraint';
 import WorkPage, { WORK_PAGE_TEXT_MAX_WIDTH } from '@/components/work/work-page';
 import Link from 'next/link';
-import { MARINE_TRACKING_URL } from '../marine-tracking/page';
-import { ONS_DESIGN_SYSTEM_URL } from '../ons-design-system/page';
-import { ONS_PROTOTYPING_KIT_URL } from '../ons-prototyping-kit/page';
 
 export const DIGITAL_CENSUS_TITLE = 'A digital‑first census';
 export const DIGITAL_CENSUS_URL = 'digital-census';
@@ -19,15 +16,14 @@ export default function DigitalCensus() {
         'JavaScript/Typescript',
         'Nunjucks',
         'Unit Testing',
-        'Node JS',
+        'Node.js',
         'Circle CI',
         'Docker',
         'Git',
         'Kanban',
         'Agile',
       ]}
-      next={ONS_DESIGN_SYSTEM_URL}
-      previous={MARINE_TRACKING_URL}
+      url={DIGITAL_CENSUS_URL}
     >
       <figure>
         <img src="/images/census/census-overview.webp" />
@@ -58,13 +54,18 @@ export default function DigitalCensus() {
 
         <p>
           I was contracted to lead the build of the UI for the electronic questionire. As the census would be required to be completed by
-          everyone from all backgrounds, technical abilities, and disabilities, a new <Link href={ONS_DESIGN_SYSTEM_URL}>UI toolkit </Link>{' '}
-          was designed and built and made available for all future questionnaires and services.
+          everyone from all backgrounds, technical abilities, and disabilities, a new design system
+          {/* <Link href={`${AppPath.Work}/${ONS_DESIGN_SYSTEM_URL}`}>design system</Link> */}
+          was built and made available for all future questionnaires and services.
         </p>
 
         <p>
-          To aid with the design and testing of the census a <Link href={ONS_PROTOTYPING_KIT_URL}>prototyping kit</Link> was built on top of
-          the design system. This allowed the team to rapidly test and iterate on the design of the questionaire using real UI components.
+          To aid with the design and testing of the census a{' '}
+          <Link href="https://service-manual.ons.gov.uk/design-system/guidance/ons-prototype-kit" target="_blank">
+            prototyping kit
+          </Link>{' '}
+          was built on top of the design system. This allowed the team to rapidly test and iterate on the design of the questionaire using
+          real UI components.
         </p>
 
         <h2>Test and test again</h2>

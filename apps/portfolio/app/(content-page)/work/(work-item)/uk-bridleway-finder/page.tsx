@@ -3,7 +3,6 @@ import WidthConstraint from '@/components/width-constraint';
 import WorkPage, { WORK_PAGE_TEXT_MAX_WIDTH } from '@/components/work/work-page';
 import { AppPath } from '@/constants/app-path.enum';
 import Link from 'next/link';
-import { TRAFFIC_MANAGEMENT_URL } from '../traffic-management/page';
 
 export const BRIDLEWAYS_TITLE = 'Bridleway finder';
 export const BRIDLEWAYS_URL = 'uk-bridleway-finder';
@@ -24,13 +23,13 @@ export default function UKBridlewayFinder() {
         'tippecanoe',
         'Osmium',
         'TypeScript',
-        'Node JS',
+        'Node.js',
         'NGINX',
         'Git',
         'nx',
         'Monorepos',
       ]}
-      next={TRAFFIC_MANAGEMENT_URL}
+      url={BRIDLEWAYS_URL}
     >
       <figure>
         <img src="/images/bridleways/bridleway-map.webp" />

@@ -152,7 +152,7 @@ export default function Home() {
               <p>
                 With over {<Experience />} years of experience as a front‑end engineer, I build user interfaces that are performant,
                 scaleable, and accessible. I have strong skills in vanilla HTML, CSS, JavaScript and TypeScript, as well as experience with
-                frameworks such as Angular, React, and NextJS.
+                frameworks such as Angular, React, and Next.js.
               </p>
             </div>
 
@@ -161,7 +161,7 @@ export default function Home() {
 
               <h3>Backend development</h3>
               <p>
-                Having experience in backend development using NodeJS, C#, frameworks like Express, NestJS, and ASP.NET, databases such as
+                Having experience in backend development using Node.js, C#, frameworks like Express, Next.js, and ASP.NET, databases such as
                 SQL Server, Postgres/PostGIS, and Firebase, I can build full-stack applications and APIs, and communicate effectively
                 backend teams.
               </p>

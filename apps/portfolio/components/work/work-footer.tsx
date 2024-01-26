@@ -70,7 +70,7 @@ function Next({ next }: { next?: string }) {
         <span className="WorkFooterLink__type">
           Next <ArrowRight className="WorkFooterLink__arrow" />
         </span>
-        <span className="WorkFooterLink__name">{WORK_ITEMS[next].title}</span>
+        <span className="WorkFooterLink__name">{WORK_ITEMS[next]?.title}</span>
       </StyledLink>
     );
   }
@@ -86,7 +86,13 @@ const StyledWorkFooter = styled.div`
   }
 `;
 
-export function WorkFooter({ previous, next }: { previous?: string; next?: string }) {
+export function WorkFooter({ url }: { url: string }) {
+  const workItems = Object.entries(WORK_ITEMS);
+  const currentIndex = workItems.findIndex(([key]) => key === url);
+
+  const previous = workItems[currentIndex - 1]?.[0];
+  const next = workItems[currentIndex + 1]?.[0];
+
   if (!isNullOrUndefined(previous) || !isNullOrUndefined(next)) {
     return (
       <StyledWorkFooter>

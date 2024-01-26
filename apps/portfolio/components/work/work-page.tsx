@@ -91,14 +91,12 @@ export default function WorkPage({
   title,
   client,
   skills,
-  next,
-  previous,
+  url,
   children,
 }: {
   title: string;
   client?: string;
-  next?: string;
-  previous?: string;
+  url: string;
   skills?: string[];
   children: React.ReactNode;
 }) {
@@ -120,7 +118,7 @@ export default function WorkPage({
 
           <div className="body">{children}</div>
 
-          <WorkFooter next={next} previous={previous} />
+          <WorkFooter url={url} />
         </WidthConstraint>
       </StyledWork>
     </>
