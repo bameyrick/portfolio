@@ -4,6 +4,7 @@ import MetaTheme from '@/lib/meta-theme';
 import { StyledComponentsRegistry } from '@/lib/registry';
 import NextThemeProvider from '@/lib/theme-provider';
 import GlobalStyles from '@/styles/global-styles';
+import { GoogleAnalytics } from '@next/third-parties/google';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -38,6 +39,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </>
         </StyledComponentsRegistry>
       </body>
+
+      <GoogleAnalytics gaId="G-2794WK8FJ8" />
     </html>
   );
 }

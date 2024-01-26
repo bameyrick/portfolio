@@ -12,6 +12,7 @@
   },
   "private": true,
   "dependencies": {
+    "@next/third-parties": "^14.1.0",
     "@nx/next": "17.2.8",
     "@qntm-code/utils": "^2.18.3",
     "color": "^4.2.3",
