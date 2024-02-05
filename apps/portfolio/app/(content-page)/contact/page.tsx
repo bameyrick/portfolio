@@ -45,7 +45,7 @@ const validationRules: Record<string, ValidationRule> = {
 
 export default function Contact() {
   const [errors, setErrors] = useState<Record<string, string>>({});
-  const [formValue, setFormValue] = useState({ Name: '', Email: '', Message: '' });
+  const [formValue, setFormValue] = useState({ Name: '', Email: '', Message: '', second_name: '' });
   const [sending, setSending] = useState(false);
 
   function setFieldValue(event: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>) {
@@ -73,6 +73,12 @@ export default function Contact() {
         }),
         {} as Record<string, { value: string; id: string; label: string }>
       );
+
+    if (!isEmpty(value.second_name.value)) {
+      while (true) {
+        console.log('No.');
+      }
+    }
 
     Object.entries(validationRules).forEach(([key, rules]) => {
       const field = value[key];
@@ -154,6 +160,11 @@ export default function Contact() {
               <FormField errors={errors}>
                 <label>Full name</label>
                 <input type="text" name="Name" value={formValue.Name} onChange={setFieldValue} disabled={sending} />
+              </FormField>
+
+              <FormField hidden={true}>
+                <label>Second name</label>
+                <input type="text" name="second_name" value={formValue.second_name} onChange={setFieldValue} disabled={sending} />
               </FormField>
 
               <FormField errors={errors}>

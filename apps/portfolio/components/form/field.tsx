@@ -2,18 +2,20 @@ import { ValidationErrors } from '@/models/validation-errors';
 import { padding } from '@/styles/settings/layout';
 import { isString } from '@qntm-code/utils';
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { v4 as uuid } from 'uuid';
 import FieldError from './field-error';
 
 const StyledFormField = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: ${padding.xs};
+  ${({ hidden }: { hidden?: boolean }) => css`
+    display: ${hidden ? 'none !important' : 'flex'};
+    flex-direction: column;
+    gap: ${padding.xs};
 
-  :not(:last-child) {
-    margin-bottom: 0;
-  }
+    :not(:last-child) {
+      margin-bottom: 0;
+    }
+  `}
 `;
 
 export interface FormFieldProps {
@@ -21,7 +23,15 @@ export interface FormFieldProps {
   children: React.ReactNode;
 }
 
-export default function FormField({ children, errors }: { children: React.ReactElement[]; errors?: ValidationErrors }) {
+export default function FormField({
+  children,
+  errors,
+  hidden,
+}: {
+  children: React.ReactElement[];
+  errors?: ValidationErrors;
+  hidden?: boolean;
+}) {
   const { label, input, textarea } = React.Children.map(children, element => {
     if (!React.isValidElement(element)) {
       return;
@@ -37,7 +47,7 @@ export default function FormField({ children, errors }: { children: React.ReactE
   const labelText = label.props.children;
 
   return (
-    <StyledFormField>
+    <StyledFormField hidden={hidden}>
       <FieldError id={id} label={labelText} errors={errors}>
         {React.cloneElement(label, { htmlFor: id })}
         {React.cloneElement(control, { id, 'aria-label': labelText, className: `${id && errors?.[id] ? 'invalid' : ''}` })}
