@@ -75,54 +75,56 @@ export default function Contact() {
       );
 
     if (!isEmpty(value.second_name.value)) {
+      event.preventDefault();
+
       while (true) {
         console.log('No.');
       }
-    }
+    } else {
+      Object.entries(validationRules).forEach(([key, rules]) => {
+        const field = value[key];
+        const fieldRules = Object.entries(rules);
 
-    Object.entries(validationRules).forEach(([key, rules]) => {
-      const field = value[key];
-      const fieldRules = Object.entries(rules);
+        for (let i = 0, l = fieldRules.length; i < l; i++) {
+          const [ruleKey, rule] = fieldRules[i];
 
-      for (let i = 0, l = fieldRules.length; i < l; i++) {
-        const [ruleKey, rule] = fieldRules[i];
+          let error: string | null = null;
 
-        let error: string | null = null;
-
-        switch (ruleKey) {
-          case 'required': {
-            if (isEmpty(field.value)) {
-              error = '{label} is required';
+          switch (ruleKey) {
+            case 'required': {
+              if (isEmpty(field.value)) {
+                error = '{label} is required';
+              }
+              break;
             }
-            break;
+            case 'minLength': {
+              if (field.value.length < rule) {
+                error = '{label} must be at least {rule} characters';
+              }
+              break;
+            }
+            case 'maxLength': {
+              if (field.value.length > rule) {
+                error = '{label} must be no more than {rule} characters';
+              }
+              break;
+            }
           }
-          case 'minLength': {
-            if (field.value.length < rule) {
-              error = '{label} must be at least {rule} characters';
-            }
-            break;
-          }
-          case 'maxLength': {
-            if (field.value.length > rule) {
-              error = '{label} must be no more than {rule} characters';
-            }
+
+          if (!isNullOrUndefined(error)) {
+            errors[field.id] = error.replace(/{rule}/g, rule.toString()).replace(/{label}/g, field.label!);
+
             break;
           }
         }
+      });
 
-        if (!isNullOrUndefined(error)) {
-          errors[field.id] = error.replace(/{rule}/g, rule.toString()).replace(/{label}/g, field.label!);
-
-          break;
-        }
+      if (!isEmpty(errors)) {
+        event.preventDefault();
       }
-    });
 
-    if (!isEmpty(errors)) {
-      event.preventDefault();
+      setErrors(errors);
     }
-
-    setErrors(errors);
   }
 
   return (
