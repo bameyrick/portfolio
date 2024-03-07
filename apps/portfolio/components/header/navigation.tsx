@@ -15,10 +15,10 @@ const headerLinks: { href: string; label: string }[] = [
     label: 'Work',
     href: AppPath.Work,
   },
-  {
-    label: 'Contact',
-    href: AppPath.Contact,
-  },
+  // {
+  //   label: 'Contact',
+  //   href: AppPath.Contact,
+  // },
 ];
 
 const StyledNavigation = styled.ul`
